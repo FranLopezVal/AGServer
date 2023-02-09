@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="HttpCore\" />
+    <None Remove="AGEnviroment\" />
+    <None Remove="Backend\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HttpCore\" />
+    <Folder Include="AGEnviroment\" />
+    <Folder Include="Backend\" />
+  </ItemGroup>
+</Project>

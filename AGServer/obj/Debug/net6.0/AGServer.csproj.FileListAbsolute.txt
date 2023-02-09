@@ -1,0 +1,12 @@
+/Users/king/Projects/AGServer/AGServer/bin/Debug/net6.0/AGServer.deps.json
+/Users/king/Projects/AGServer/AGServer/bin/Debug/net6.0/AGServer.dll
+/Users/king/Projects/AGServer/AGServer/bin/Debug/net6.0/AGServer.pdb
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/AGServer.csproj.AssemblyReference.cache
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/AGServer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/AGServer.AssemblyInfoInputs.cache
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/AGServer.AssemblyInfo.cs
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/AGServer.csproj.CoreCompileInputs.cache
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/AGServer.dll
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/refint/AGServer.dll
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/AGServer.pdb
+/Users/king/Projects/AGServer/AGServer/obj/Debug/net6.0/ref/AGServer.dll

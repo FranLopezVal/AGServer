@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "AGSockConsole/1.0.0": {
+        "dependencies": {
+          "AGServer": "1.0.0"
+        },
+        "runtime": {
+          "AGSockConsole.dll": {}
+        }
+      },
+      "AGServer/1.0.0": {
+        "runtime": {
+          "AGServer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AGSockConsole/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AGServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

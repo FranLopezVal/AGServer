@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGSockConsole", "AGSockConsole\AGSockConsole.csproj", "{27AB665A-54B3-4072-BE58-A770E2FAEFEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGServer", "AGServer\AGServer.csproj", "{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27AB665A-54B3-4072-BE58-A770E2FAEFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27AB665A-54B3-4072-BE58-A770E2FAEFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AB665A-54B3-4072-BE58-A770E2FAEFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27AB665A-54B3-4072-BE58-A770E2FAEFEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2F27911-DA23-46F7-A284-60EEF12E3ABD}
+	EndGlobalSection
+EndGlobal
