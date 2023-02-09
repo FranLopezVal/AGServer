@@ -3,7 +3,7 @@ Multiple server oriented to games, handle Http Server + AG Server (Custom for ga
 
 ```C++ 
 Project Require (NET6);
-char[] Languaje = "C#";
+char[] Language = "C#";
 ```
 ___________
 
