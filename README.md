@@ -1,3 +1,5 @@
+
+<img src="https://img.shields.io/badge/test-22_passing-blue"/> <img src="https://img.shields.io/badge/http_postman-test pass-green"/> <img src="https://img.shields.io/badge/build-passing-brightgreen"/>
 # AGServer
 Multiple server oriented to games, handle Http Server + AG Server (Custom for games)
 
