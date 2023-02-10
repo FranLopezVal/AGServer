@@ -16,6 +16,7 @@ namespace AGServer.AG
 
 		private AGSession _session;
 
+		public AGSession GetSession => _session;
 		public string GetId => _session!=null?_session.Token : "_";
 
 		public AGClient(Socket s,AGSession session)
@@ -29,7 +30,8 @@ namespace AGServer.AG
             _handlerData.Start();
 
 			onReceiveData += (data)=>{
-
+				if (string.IsNullOrEmpty(data)) return;
+				AGController.ComputeReceivedData(data, this);
 			};
 
         }
@@ -41,35 +43,30 @@ namespace AGServer.AG
 
 			int n = _socket.Receive(buffer, nbytes, SocketFlags.None);
 
-			string data = AGController.GlobalEncoding.GetString(buffer, 4, n - 6);
+			string data = AGController.GlobalEncoding.GetString(buffer,0, n);
 
-			if (buffer[0] == (byte)HeaderAGProtocol.client)
-			{ //msgfromclient
-
-			}
-
-			if (buffer[n-2] == (byte)HeaderAGProtocol.eof_ident &&
-				buffer[n-1] == (byte)HeaderAGProtocol.eof_confirm)
-			{
-				//Is correct format AGP
-			}
 			//if(onReceiveData!=null)
-			Console.WriteLine(data);
+			//Console.WriteLine(data);
 			onReceiveData(data);
         }
 
 		public void SendData(string data)
 		{
-            data = data + (char)0; 
-            _socket.Send(AGController.AGProtocolSimple(data));
+            data = data + (char)0;
+
+
+			Console.WriteLine($"Sending data: {data} // To client: {this.GetSession.Token}" +
+				$" //with Ip: {_clientAddr.ToString()}");
+
+            byte[] b = AGController.GlobalEncoding.GetBytes(data);
+            _socket.Send(b);
         }
 
 		public void Close()
 		{
-			onDisconnect(this);
+			if(onDisconnect!=null)onDisconnect(this);
 			_socket.Shutdown(SocketShutdown.Both);
-			_socket.Close();
-			_handlerData.Abort();
+			//_handlerData.Abort();
 		}
 	}
 }

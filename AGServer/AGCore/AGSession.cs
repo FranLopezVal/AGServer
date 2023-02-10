@@ -14,6 +14,7 @@ namespace AGServer
 		public AGSession()
 		{
 			_id = Guid.NewGuid();
+			
 			_token = _id.ToString();
 			_sessionCreationTime = DateTime.Now;
 			_timeout = 5 * 60; //in secs

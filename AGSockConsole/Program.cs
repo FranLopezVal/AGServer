@@ -6,16 +6,22 @@ using Stc;
 
 
 bool exit = false;
-while (!exit)
+while (!exit) //Estructura simple para la ejecucion de AG
 {
     Console.Write(">> ");
     string? c = Console.ReadLine();
     switch (c)
     {
-        case "init.agp":
+        case "agp.m": //pone el sistema en modo mantenimiento.
+            (statics.servers[0] as AGServer.AGServer).SetMaintenance(1);
+            break;
+        case "agp.nm": //quita el modo mantenimiento de el sistema
+            (statics.servers[0] as AGServer.AGServer).SetMaintenance(-1);
+            break;
+        case "init.agp": //inicializa un sistema servidor AG
             InitAGP();
             break;
-        case "init.http":
+        case "init.http": //inicializa un servidor HTTP Simple
             Console.Write("Set Port: ");
             string? prt = Console.ReadLine();
             bool correct = true;
@@ -27,11 +33,11 @@ while (!exit)
             if (!correct) break;
             InitHttpServer(Convert.ToInt16(prt));
             break;
-        case "exit":
+        case "exit": //Cierra el programa
             {
                 foreach (var item in statics.servers)
                 {
-                    item.Shutdown();
+                    item.Shutdown(); //ToDo: Error on exit when close
                 }
                 foreach (var item in statics.thrs)
                 {

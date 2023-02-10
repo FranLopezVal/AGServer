@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGSockConsole", "AGSockCons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGServer", "AGServer\AGServer.csproj", "{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGTest", "AGTest\AGTest.csproj", "{73BC6040-E66D-487B-8896-782FC7EC61F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66BB7AB0-7E16-46D9-A6AF-5C5206BE54AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73BC6040-E66D-487B-8896-782FC7EC61F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73BC6040-E66D-487B-8896-782FC7EC61F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73BC6040-E66D-487B-8896-782FC7EC61F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73BC6040-E66D-487B-8896-782FC7EC61F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

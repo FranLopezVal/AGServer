@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
 
+
+
 namespace AGServer.AG
 {
     [Obsolete]
@@ -25,6 +27,8 @@ namespace AGServer.AG
         public const string CLIENT_REGISTER_SERVER = "CL_REG_SRV";
         public const string GET_VERSION_AG = "VERSION_SERVER_AG";
         public const string MAINTENANCE = "MAINTENANCE_MODE";
+        //ONLY SEND BY SERVER
+        public const string CONNECTED_OK = "CONNECTED";
     }
 
     /// <summary>
@@ -39,7 +43,7 @@ namespace AGServer.AG
         internal static Encoding GlobalEncoding =>
 			Encoding.UTF8;
 
-		public static string GLOBAL_DELIMITER = "\u0002";
+		public static char GLOBAL_DELIMITER = '@';
 
         [Obsolete]
         public static byte[] AGProtocolSimple(string data)
@@ -71,7 +75,8 @@ namespace AGServer.AG
 		public static void ComputeReceivedData(string data,AGClient client)
 		{
 			string header = GetHeader(data);
-            string dat = data.Substring(data.IndexOf(GLOBAL_DELIMITER));
+            int idx = data.IndexOf(GLOBAL_DELIMITER);
+            string dat = data.Substring(idx>=0?idx: 0);
 			InitAction(header, dat, client);
 		}
         /// <summary>
@@ -81,7 +86,12 @@ namespace AGServer.AG
         /// <returns></returns>
 		public static string GetHeader(string data)
 		{
-			string header = data.Substring(0,data.IndexOf(GLOBAL_DELIMITER));
+            string[] parts = data.Split(new char[] { GLOBAL_DELIMITER }, StringSplitOptions.RemoveEmptyEntries);
+
+            string header = parts[0];
+            header.Replace(@"\u0000", "");
+            header.Trim('\0');
+            
 			if (string.IsNullOrEmpty(header)) return Headers.ERR_HEADER;
 			return header;
 		}

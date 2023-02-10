@@ -86,6 +86,8 @@ namespace AGServer
         public override void Run()
         {
             _initialized = Initialize(0x7fffffff);
+            AGController.InitAGHeaders();
+
             if (!_initialized) return;
             _active = true;
 
@@ -103,18 +105,22 @@ namespace AGServer
             
             var client = _socket.Accept();
 
-            if(_maintenance!=-1)
+            if (_maintenance != -1)
             {
-               var agc = new AGClient(client, new AGSession());
+                var agc = new AGClient(client, new AGSession());
                 agc.SendData(Headers.MAINTENANCE +
                     AGController.GLOBAL_DELIMITER + "TIMEOUT:" + _maintenance);
                 agc.Close();
             }
+            else
+            {
+                if (onNewConnection != null)
+                    onNewConnection(client);
 
-            if (onNewConnection != null)
-            onNewConnection(client);
-            
-            _clients.Add(new AGClient(client,new AGSession()));
+                _clients.Add(new AGClient(client, new AGSession()));
+                _clients[_clients.Count - 1].SendData(Headers.CONNECTED_OK +
+                    AGController.GLOBAL_DELIMITER + "uID:" + _clients[_clients.Count - 1].GetId);
+            }
         }   
 
 
