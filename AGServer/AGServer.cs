@@ -169,6 +169,11 @@ namespace AGServer
             _socket.Dispose();
             _socket = null;
         }
+
+        public override string ToString()
+        {
+            return $"AG server>{_targetIp}:{_port}";
+        }
     }
 }
 

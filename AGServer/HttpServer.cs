@@ -50,6 +50,10 @@ namespace AGServer
             }
 
         }
+        public override string ToString()
+        {
+            return $"AG server>{_targetIp}:{_port}";
+        }
 
         public override void Shutdown()
         {
